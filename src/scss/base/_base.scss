@@ -1,0 +1,95 @@
+html {
+  font-size: 16px;
+  @include mobile-l {
+    font-size: 12px;
+  }
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+section {
+  padding: 2em 0;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 3em;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+,
+h1,
+h2,
+h3,
+h4 {
+  color: $h-color;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2.5rem;
+}
+
+h4 {
+  font-size: 1.75rem;
+}
+
+a,
+p,
+span {
+  font-size: 1em;
+  @include mobile-l {
+    font-size: 1.4rem;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $h-color;
+
+  &:active {
+    text-decoration: none;
+  }
+}
+
+p {
+  color: $f-color;
+  line-height: 1.77;
+}
+
+.bold {
+  font-weight: 900;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.break {
+  font-size: 1em;
+  display: block;
+}
+
+.dot {
+  &:after {
+    content: '.';
+    color: rgb(237, 31, 76);
+  }
+}

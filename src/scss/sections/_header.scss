@@ -1,0 +1,230 @@
+.header {
+  background: $gradient;
+  position: relative;
+
+  &:before {
+    @include desktop {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -6em;
+      transform: skewY(-6deg);
+      width: 100%;
+      height: 12em;
+      background-color: #ffffff;
+    }
+    @include desktop {
+      height: 18em;
+      bottom: -10em;
+    }
+  }
+}
+
+.header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 6em;
+  @include desktop {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.header-content {
+  text-align: center;
+  @include desktop {
+    text-align: left;
+    padding: 5em 0;
+  }
+
+  .btn {
+    margin: 4em 0;
+    padding: 1em 2.5em;
+    font-weight: bold;
+    border-radius: 1.5em;
+    font-family: 'Lato';
+    background-color: #ffffff;
+    color: rgb(235, 64, 44);
+    border: none;
+    transition: .3s;
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0 10px 20px 0 rgba(0, 0, 0, .3);
+      text-decoration: line-through;
+    }
+    @include desktop {
+      font-size: 1.2em;
+    }
+  }
+}
+
+.header-content-title {
+  @include desktop {
+    margin: 0;
+  }
+  color: #ffffff;
+}
+
+.header-content-text {
+  color: #ffffff;
+  @include desktop {
+    padding-bottom: 3em;
+  }
+}
+
+.phone-image {
+  display: none;
+  z-index: 1;
+  @include desktop {
+    display: block;
+  }
+}
+//NAVIGATION
+
+.nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  transition: 1s ease;
+  width: 100%;
+  z-index: 2;
+  padding: 1em 0;
+}
+
+.nav-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 1.5em;
+  @include desktop {
+    align-items: center;
+  }
+}
+
+.logo {
+  z-index: 2;
+  font-size: 3rem;
+  color: #ffffff;
+  padding: 0.3em;
+}
+
+.nav-hamburger {
+  display: block;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  z-index: 2;
+
+  span {
+    width: 40px;
+    height: 3px;
+    border-radius: 10px;
+    margin: 8px auto;
+    background-color: #ffffff;
+    display: block;
+    transition: 0.3s;
+  }
+  @include desktop {
+    display: none;
+  }
+}
+
+.open {
+  span {
+    transform: rotate(30deg);
+
+    &:nth-child(1) {
+      width: 20px;
+    }
+
+    &:nth-child(2) {
+      width: 30px;
+    }
+  }
+}
+
+.nav-list {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 2em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: $gradient;
+  overflow: hidden;
+  transition: 0.3s;
+  @include desktop {
+    display: flex;
+    font-size: 1em;
+    position: relative;
+    align-items: center;
+    height: 100%;
+    flex-direction: row;
+    width: auto;
+    background: transparent;
+  }
+
+  li {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    align-items: center;
+    width: 100%;
+    height: 20vh;
+    @include desktop {
+      height: auto;
+      flex-grow: 0;
+    }
+  }
+
+  a {
+    font-size: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: #ffffff;
+    text-transform: uppercase;
+    opacity: 0;
+
+    &:hover {
+      text-decoration: line-through;
+    }
+    @include tablet-m {
+      opacity: 0;
+      padding: 1em 1.5em;
+    }
+
+    @include desktop {
+      padding: 2em 1.5em;
+      opacity: 1;
+    }
+  }
+}
+
+.visible {
+  height: 100vh;
+  display: flex;
+  transition: 0.6s;
+  opacity: 1;
+  a {
+    opacity: 1;
+  }
+}
+
+.nav-fixed {
+  z-index: 4;
+  background: $gradient;
+  box-shadow: 0 1px 40px rgba(0, 0, 0, 0.8);
+  padding: 0;
+}

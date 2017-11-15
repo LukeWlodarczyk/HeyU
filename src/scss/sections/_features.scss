@@ -1,0 +1,118 @@
+.features {
+  background: $gradient;
+
+  @include desktop {
+    margin: 10em 0;
+  }
+}
+
+.features-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  @include tablet-l {
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 60em;;
+  }
+  @include desktop {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-height: 33em;
+  }
+
+  .features-image {
+    margin: 3em 0;
+    display: flex;
+    @include tablet-l {
+      order: 1;
+    }
+
+    @include desktop {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, -2.5em);
+      width: 50%;
+      max-width: 30.5em;
+      order: 0;
+    }
+  }
+}
+
+.features-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3em 0;
+  text-align: center;
+  @include tablet-m {
+    padding: 4em 0;
+  }
+
+  @include tablet-l {
+    padding: 0;
+    width: 40%;
+    height: 30em;
+    text-align: right;
+  }
+
+  @include desktop {
+    height: auto;
+    width: 20%;
+    text-align: left;
+
+    &:nth-child(1) {
+      text-align: right;
+    }
+  }
+
+  .visibility {
+    color: white;
+    font-size: 2em;
+    display: none;
+    @include tablet-m {
+      display: block;
+    }
+
+    @include desktop {
+      font-size: 3em;
+      transform: translate(1.5em, 1.2em);
+    }
+  }
+
+  .transform {
+    @include desktop {
+      transform: translate(-1.5em, 1.2em);
+    }
+  }
+
+  .feature-title {
+    color: white;
+    padding-bottom: 1em;
+    padding-top: .3em;
+  }
+
+  .features-description {
+    color: white;
+
+    @include tablet-m {
+      margin: 0 auto;
+      width: 80%;
+    }
+
+    @include tablet-l {
+      margin: 0;
+      width: 100%;
+    }
+  }
+
+  .features-box {
+    padding: 1em 0;
+  }
+}

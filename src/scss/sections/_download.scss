@@ -1,0 +1,28 @@
+.download-container {
+  padding: 5em 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .btn-download {
+    border: none;
+    background: transparent;
+    transition: 0.3s;
+    filter: drop-shadow(0 5px 10px rgb(217, 6, 71));
+
+    &:hover {
+      cursor: pointer;
+      filter: drop-shadow(0 10px 20px rgb(217, 6, 71));
+    }
+  }
+
+  .download-icon {
+    border-radius: 23%;
+  }
+
+  .download-descritpion {
+    text-align: center;
+    width: 60%;
+    padding: 4em 0;
+  }
+}

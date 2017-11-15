@@ -1,0 +1,52 @@
+.footer {
+  border-top: 1px solid rgb(215, 215, 215);
+}
+
+.footer-content {
+  padding: 1.5em 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include tablet-l {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-list-footer {
+    margin-bottom: 1em;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: space-around;
+
+    @include tablet-s {
+      flex-direction: row;
+    }
+
+    @include tablet-l {
+      margin: 0;
+    }
+
+
+    .nav-footer-item {
+      display: block;
+      padding: .5em 1em;
+
+      &:hover {
+        text-decoration: line-through;
+      }
+    }
+  }
+
+  .footer-select {
+    font-weight: bold;
+    appearance: none;
+    padding: .7em 2em;
+    padding-right: 4em;
+    border-radius: 1.5em;
+    border: none;
+    background: url('http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png') no-repeat 7.5em rgb(228, 228, 228);
+  }
+}
